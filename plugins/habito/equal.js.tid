@@ -1,0 +1,37 @@
+created: 20180824223543651
+modified: 20180824230013445
+module-type: filteroperator
+tags: 
+title: $:/plugins/Guitlle/helpers/equal.js
+type: application/javascript
+
+/*\
+title: $:/core/modules/filters/equal.js
+type: application/javascript
+module-type: filteroperator
+
+Filter operator for comparing title fields for equality
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+/*
+Export our filter function
+*/
+exports.equal = function(source,operator,options) {
+    var results = [];
+    source(function(tiddler,title) {
+        if ( (title == operator.operand && operator.prefix !== "!") ||
+             (title !== operator.operand && operator.prefix === "!") ) {
+            results.push(title);
+        }
+    });
+    console.log("returning results: ", results, operator);
+    return results;
+};
+
+})();

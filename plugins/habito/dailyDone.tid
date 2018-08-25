@@ -1,0 +1,26 @@
+created: 20180824222515632
+list-before: $:/core/ui/ViewTemplate/title
+modified: 20180825232633394
+tags: $:/tags/ViewTemplate
+title: $:/plugins/Guitlle/habito/dailyDone
+
+<$list filter="[all[current]tags[]equal[Daily]]" variable="tag_name">
+<$wikify name="dateEntry" text="""<$macrocall $name="now" format="YYYY-MM-DD"/>""">
+<$wikify name="dateEntry_brackets" text="""<$text text='[['/><<dateEntry>><$text text=']]'/>"""> 
+<$wikify name="safe_time" text="""<$list filter=[list[!!daysdone]titledate:afterOffset{!!dayscheck}last[]]>safe-time </$list>habito-btn-title""">
+<h2 class=<<safe_time>> title="Task done today.">
+<$list filter="[list[!!daysdone]equal<dateEntry>]" variable="i" emptyMessage="""
+    <$button class="habito-btn daily-btn">
+        <$action-listops $field="daysdone" $subfilter= 
+        <<dateEntry_brackets>>/>
+        {{$:/core/images/close-button}}
+    </$button>
+""">
+    <$button class="habito-btn success  daily-btn">
+        <$action-listops $field="daysdone" $subfilter="+[remove<dateEntry_brackets>]"/> 
+        {{$:/core/images/done-button}}
+    </$button>
+</$list>
+<$list filter=[list[!!daysdone]titledate:toOffsetFromDate[]last[]!equal[NaN]]><span class="habito-btn-caption"><<currentTiddler>></span> </$list>
+</h2>
+</$wikify></$wikify></$wikify></$list>

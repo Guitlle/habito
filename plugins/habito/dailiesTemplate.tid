@@ -1,0 +1,8 @@
+created: 20180825173231283
+modified: 20180825191338434
+tags: 
+title: $:/plugins/Guitller/habito/dailiesTemplate
+
+<$list filter="[all[tiddlers]tag[Daily]!tag[$:/tags/ViewTemplate]]" variable="currentTiddler">
+<div class="habito-list-item"><$transclude tiddler="$:/plugins/Guitlle/habito/dailyDone" /> <h3><$link to=<<currentTIddler>> ><<currentTiddler>> </$link> </h3></div>
+</$list>

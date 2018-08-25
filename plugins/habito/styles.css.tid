@@ -1,0 +1,63 @@
+created: 20180824233146484
+modified: 20180825232248426
+tags: $:/tags/Stylesheet
+title: $:/plugins/Guitlle/habito/styles.css
+type: text/css
+
+.habito-btn-title {
+  float:left;
+  width: 1.5em;
+  height: 1em;
+  margin: 0.2em;
+  margin-right: 1em;
+  padding-bottom: 0.2em;
+  position: relative;
+}
+.habito-btn-title .habito-btn {
+  font-size: 100%; 
+  width: 1.5em;
+  font-weight:bold;
+  border: 2px dashed #999999
+}
+.habito-btn-title .habito-btn {
+  background: #ffaaaa;
+  color: white;
+}
+.habito-btn-title.safe-time .habito-btn {
+  background: #ffffff;
+  color: #777777
+}
+.habito-btn-title .habito-btn.success {
+  background: #55EEA9;
+}
+.habito-list-item {
+  clear:both;
+  background: #DDFFDD;
+  color: #555;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.habito-list-item h3 {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  margin: 0.2em;
+}
+.habito-list-item::after {
+  clear: both;
+  display: block;
+  content: " ";
+  height: 1px;
+}
+.habito-btn-caption {
+  font-size: 8px;
+  position: absolute;
+  right: -12px;
+  bottom: -15px;
+  background: #777;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 3px;
+  width: 15px;
+  text-align: center;
+}
