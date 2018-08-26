@@ -1,5 +1,6 @@
 created: 20180824233146484
-modified: 20180825232248426
+makebackup: 1
+modified: 20180826054933785
 tags: $:/tags/Stylesheet
 title: $:/plugins/Guitlle/habito/styles.css
 type: text/css
@@ -12,6 +13,7 @@ type: text/css
   margin-right: 1em;
   padding-bottom: 0.2em;
   position: relative;
+  z-index:501;
 }
 .habito-btn-title .habito-btn {
   font-size: 100%; 
@@ -38,7 +40,7 @@ type: text/css
   margin-bottom: 10px;
 }
 .habito-list-item h3 {
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 1.5em;
   margin: 0.2em;
 }
@@ -58,6 +60,23 @@ type: text/css
   border-radius: 10px;
   border: 1px solid white;
   padding: 3px;
-  width: 15px;
   text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  white-space: nowrap;
+  max-width: 30px;
+}
+.habito-coimage {
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 4px 10px;
+  background: #FEA;
+  display: inline-block;
+  vertical-align: middle;
+}
+.habito-coimage span {
+  vertical-align: middle;
+  font-weight: bold;
+  display: inline-block;
+  height: 25px;
 }
