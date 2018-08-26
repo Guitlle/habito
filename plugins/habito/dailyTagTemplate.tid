@@ -1,0 +1,14 @@
+created: 20180826055731030
+modified: 20180826060827689
+tags: 
+title: $:/plugins/Guitlle/habito/dailyTagTemplate
+
+<$list filter="[<currentTab>equal[All]]">
+<$list filter="[all[tiddlers]tag[Daily]]" variable="currentTiddler">
+<div class="habito-list-item"><$transclude tiddler="$:/plugins/Guitlle/habito/dailyDone" /> <h3><$link to=<<currentTIddler>> ><<currentTiddler>> </$link> </h3></div>
+</$list>
+
+</$list>
+<$list filter="[all[tiddlers]tag[Daily]tag<currentTab>]" variable="currentTiddler">
+<div class="habito-list-item"><$transclude tiddler="$:/plugins/Guitlle/habito/dailyDone" /> <h3><$link to=<<currentTIddler>> ><<currentTiddler>> </$link> </h3></div>
+</$list>

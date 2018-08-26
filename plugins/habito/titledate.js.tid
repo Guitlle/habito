@@ -1,5 +1,5 @@
 created: 20180825043907936
-modified: 20180825231217610
+modified: 20180826043843482
 module-type: filteroperator
 tags: 
 title: $:/plugins/Guitlle/helpers/titledate.js
@@ -51,7 +51,6 @@ exports.titledate = function(source,operator,options) {
         case "toOffsetFromDate": 
             // Empty value means today
             // Converts offsets to numbers
-            debugger;
             var from = new Date(operator.operand);
             if (isNaN(from.getYear())) {
                 from = new Date();
@@ -65,7 +64,6 @@ exports.titledate = function(source,operator,options) {
                 }
             });
         break;
-        case "":
 	}
 	return results;
 };

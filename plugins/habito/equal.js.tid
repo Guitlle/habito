@@ -1,5 +1,5 @@
 created: 20180824223543651
-modified: 20180824230013445
+modified: 20180826043753938
 module-type: filteroperator
 tags: 
 title: $:/plugins/Guitlle/helpers/equal.js
@@ -30,7 +30,6 @@ exports.equal = function(source,operator,options) {
             results.push(title);
         }
     });
-    console.log("returning results: ", results, operator);
     return results;
 };
 
