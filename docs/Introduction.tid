@@ -1,0 +1,24 @@
+created: 20180826044241098
+modified: 20180826064112379
+tags: Docs Habito
+title: Introduction
+type: application/x-tiddler
+
+''Habito'' is a habits tool implemented in Tiddlywiki. To start open the [[Habito]] tiddler and explore the main dashboard. Habito is a set of helpers that extend tiddlywiki basic functionality and integrates seamlessly to it.
+
+!! Dailies:
+To create a daily, just add the tag <<tag Daily>> to a tiddler. Set the following fields:
+
+| !dayscheck|Number of days between task repeats. |
+| !daysdone|Leave blank. The record of dates when the task was marked as done. |
+| !gold_reward|Amount of gold granted when task is marked as done. You know best if a task deserves a large or a small reward. Get paid by your own hand, but be wise enough to set a fair reward. |
+| !~~cronrow~~|~~Times when the task is shown. Uses crontab syntax. Leave blank if you want it to show all the time~~ |
+
+Examples: 
+
+* [[Pay the bills]]
+* [[Declare taxes]]
+* [[Call a friend]]
+ 
+
+!! Rewards:
