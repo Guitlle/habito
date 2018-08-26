@@ -1,8 +1,10 @@
 created: 20180824222515632
+gold_reward: 10
 list-before: $:/core/ui/ViewTemplate/title
-modified: 20180825232633394
+modified: 20180826043118322
 tags: $:/tags/ViewTemplate
 title: $:/plugins/Guitlle/habito/dailyDone
+type: application/x-tiddler
 
 <$list filter="[all[current]tags[]equal[Daily]]" variable="tag_name">
 <$wikify name="dateEntry" text="""<$macrocall $name="now" format="YYYY-MM-DD"/>""">
@@ -13,11 +15,15 @@ title: $:/plugins/Guitlle/habito/dailyDone
     <$button class="habito-btn daily-btn">
         <$action-listops $field="daysdone" $subfilter= 
         <<dateEntry_brackets>>/>
+        <$action-setfield-mathjs $tiddler="Habito" $field="gold" $eval="reward+gold" reward={{!!gold_reward}} />
+        <$action-setfield-mathjs $tiddler="Habito" $field="xp" $eval="xp+1" reward={{!!xp_reward}} />
         {{$:/core/images/close-button}}
     </$button>
 """>
     <$button class="habito-btn success  daily-btn">
         <$action-listops $field="daysdone" $subfilter="+[remove<dateEntry_brackets>]"/> 
+        <$action-setfield-mathjs $tiddler="Habito" $field="gold" $eval="gold-reward" reward={{!!gold_reward}} />
+        <$action-setfield-mathjs $tiddler="Habito" $field="xp" $eval="xp-1" />
         {{$:/core/images/done-button}}
     </$button>
 </$list>
