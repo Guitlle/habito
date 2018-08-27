@@ -1,0 +1,53 @@
+created: 20180824223543651
+modified: 20180826232937512
+module-type: filteroperator
+tags: 
+title: $:/plugins/Guitlle/helpers/compare.js
+type: application/javascript
+
+/*\
+title: $:/plugins/Guitlle/helpers/compare.js
+type: application/javascript
+module-type: filteroperator
+
+Filter operator for comparing title fields for equality
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+/*
+Export our filter function
+*/
+exports.compare = function(source,operator,options) {
+    var results = [];
+    switch (operator.suffix) {
+        case "equal":
+            source(function(tiddler,title) {
+                if ( ((title == operator.operand)^(operator.prefix == "!")) == 1) {
+                    results.push(title);
+                }
+            });
+            break;
+        case "greater":
+            source(function(tiddler,title) {
+                if ( ((+title > +operator.operand)^(operator.prefix == "!")) == 1) {
+                    results.push(title);
+                }
+            });
+            break;
+        case "less":
+            source(function(tiddler,title) {
+                if ( ((+title > +operator.operand)^(operator.prefix == "!")) == 1) {
+                    results.push(title);
+                }
+            });
+            break;
+    }
+    return results;
+};
+
+})();

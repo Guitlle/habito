@@ -1,17 +1,16 @@
 created: 20180824222515632
-gold_reward: 10
 list-before: $:/core/ui/ViewTemplate/title
-modified: 20180826043118322
+modified: 20180827044148979
 tags: $:/tags/ViewTemplate
 title: $:/plugins/Guitlle/habito/dailyDone
 type: application/x-tiddler
 
-<$list filter="[all[current]tags[]equal[Daily]]" variable="tag_name">
+<$list filter="[all[current]tags[]compare:equal[Daily]]" variable="tag_name">
 <$wikify name="dateEntry" text="""<$macrocall $name="now" format="YYYY-MM-DD"/>""">
 <$wikify name="dateEntry_brackets" text="""<$text text='[['/><<dateEntry>><$text text=']]'/>"""> 
-<$wikify name="safe_time" text="""<$list filter=[list[!!daysdone]titledate:afterOffset{!!dayscheck}last[]]>safe-time </$list>habito-btn-title""">
-<h2 class=<<safe_time>> title="Task done today.">
-<$list filter="[list[!!daysdone]equal<dateEntry>]" variable="i" emptyMessage="""
+<$wikify name="widget_class" text="""<$list filter=[list{!!daysdone}!titledate:afterOffset{!!dayscheck}last[]]>habito-daily-missed </$list>habito-btn-wrapper""">
+<div class=<<widget_class>> title="Task done today.">
+<$list filter="[list[!!daysdone]compare:equal<dateEntry>]" variable="i" emptyMessage="""
     <$button class="habito-btn daily-btn">
         <$action-listops $field="daysdone" $subfilter= 
         <<dateEntry_brackets>>/>
@@ -27,6 +26,6 @@ type: application/x-tiddler
         {{$:/core/images/done-button}}
     </$button>
 </$list>
-<$list filter=[list[!!daysdone]titledate:toOffsetFromDate[]last[]!equal[NaN]]><span class="habito-btn-caption"><<currentTiddler>></span> </$list>
-</h2>
+<$list filter=[list[!!daysdone]titledate:toOffsetFromDate[]last[]!compare:equal[NaN]]><span class="habito-btn-caption"><<currentTiddler>></span> </$list>
+</div>
 </$wikify></$wikify></$wikify></$list>

@@ -1,0 +1,19 @@
+created: 20180826065511097
+list-before: $:/core/ui/ViewTemplate/title
+modified: 20180827043044515
+tags: $:/tags/ViewTemplate
+title: $:/plugins/Guitlle/habito/getReward
+type: application/x-tiddler
+
+<$list filter="[all[current]tags[]compare:equal[Reward]]" variable="tag_name">
+<$wikify name="dateEntry" text="""<$macrocall $name="now" format="YYYY-0MM-DD 0hh:0mm:0ss"/>""">
+<$wikify name="dateEntry_brackets" text="""<$text text='[['/><<dateEntry>><$text text=']]'/>"""> 
+<$wikify name="widget_class" text="""<$list filter=[{!!days_rewarded}titledate:afterOffset{!!cooldown}last[]]>habito-reward-cooldown </$list><$list filter="[{Habito!!gold}!compare:greater{!!gold_price}]"> habito-reward-no-funds</$list> habito-btn-wrapper""">
+<div class=<<widget_class>> title="Get this reward.">
+    <$button class="habito-btn reward-btn">
+        <$action-listops $field="days_rewarded" $subfilter=<<dateEntry_brackets>>/> 
+        <$action-setfield-mathjs $tiddler="Habito" $field="gold" $eval="gold-price" price={{!!gold_price}} />
+        $
+    </$button>
+</div>
+</$wikify></$wikify></$wikify></$list>

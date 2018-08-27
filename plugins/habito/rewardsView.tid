@@ -1,7 +1,7 @@
 caption: Rewards
 created: 20180826054723226
-modified: 20180826054741099
+modified: 20180827044722816
 tags: 
 title: $:/plugins/Guitlle/habito/rewardsView
 
-Rewards
+<$macrocall $name="tabs" tabsList="[all[tiddlers]tag[Reward]tags[]!compare:equal[Reward]sort[]append[All]]" default="All" state="$:/state/tab/habito/rewards" class="tc-vertical" template="$:/plugins/Guitlle/habito/rewardTagTemplate" />

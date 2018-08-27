@@ -1,0 +1,14 @@
+created: 20180827044726176
+modified: 20180827144803334
+tags: 
+title: $:/plugins/Guitlle/habito/rewardTagTemplate
+
+<$list filter="[<currentTab>compare:equal[All]]">
+<$list filter="[all[tiddlers]tag[Reward]!has[draft.of]]" variable="currentTiddler">
+<div class="habito-list-item"><$transclude tiddler="$:/plugins/Guitlle/habito/getReward" /> <h3><$link to=<<currentTIddler>> ><<currentTiddler>> </$link> </h3></div>
+</$list>
+
+</$list>
+<$list filter="[all[tiddlers]tag[Reward]tag<currentTab>!has[draft.of]]" variable="currentTiddler">
+<div class="habito-list-item"><$transclude tiddler="$:/plugins/Guitlle/habito/getReward" /> <h3><$link to=<<currentTIddler>> ><<currentTiddler>> </$link> </h3></div>
+</$list>
