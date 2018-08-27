@@ -1,8 +1,0 @@
-caption: Dailies
-created: 20180825173231283
-modified: 20180827144814868
-tags: 
-title: $:/plugins/Guitlle/habito/dailiesView
-type: application/x-tiddler
-
-<$macrocall $name="tabs" tabsList="[all[tiddlers]tag[Daily]tags[]!compare:equal[Daily]sort[]append[All]]" default="All" state="$:/state/tab/habito/dailies" class="tc-vertical" template="$:/plugins/Guitlle/habito/dailyTagTemplate" />

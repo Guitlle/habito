@@ -1,6 +1,0 @@
-created: 20180827144401872
-modified: 20180827144453190
-tags: 
-title: $:/plugins/Guitlle/habito/habitsView
-
-<$macrocall $name="tabs" tabsList="[all[tiddlers]tag[Habit]tags[]!compare:equal[Habit]sort[]append[All]]" default="All" state="$:/state/tab/habito/dailies" class="tc-vertical" template="$:/plugins/Guitlle/habito/habitsTagTemplate" />
