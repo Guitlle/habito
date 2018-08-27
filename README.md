@@ -1,3 +1,5 @@
+Habit tracking tool for Tiddlywiki. Checkout the [demo](https://rawgit.com/Guitlle/habito/build/build/habito-docs.html).
+
 To build do:
 
 ```
