@@ -3,7 +3,7 @@
     "plugins": [
         "tiddlywiki/tiddlyweb",
         "tiddlywiki/filesystem",
-        "mklauber/math.js"        
+        "Guitlle/habito"        
     ],
     "themes": [
         "tiddlywiki/vanilla",
