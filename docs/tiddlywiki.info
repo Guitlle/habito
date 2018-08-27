@@ -1,0 +1,18 @@
+{
+    "description": "Basic client-server edition",
+    "plugins": [
+        "tiddlywiki/tiddlyweb",
+        "tiddlywiki/filesystem",
+        "mklauber/math.js"        
+    ],
+    "themes": [
+        "tiddlywiki/vanilla",
+        "tiddlywiki/snowwhite"
+    ],
+    "build": {
+        "index": [
+            "--output","../build/",
+            "--rendertiddler","$:/plugins/tiddlywiki/tiddlyweb/save/offline","habito-docs.html","text/plain"
+        ]
+    }
+}
