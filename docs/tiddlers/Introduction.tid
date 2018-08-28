@@ -1,5 +1,6 @@
 created: 20180826044241098
-modified: 20180826064112379
+modified: 20180828073400709
+revision: 0
 tags: Docs Habito
 title: Introduction
 type: application/x-tiddler
@@ -9,10 +10,11 @@ type: application/x-tiddler
 !! Dailies:
 To create a daily, just add the tag <<tag Daily>> to a tiddler. Set the following fields:
 
-| !dayscheck|Number of days between task repeats. |
-| !daysdone|Leave blank. The record of dates when the task was marked as done. |
+| !days_repeat|Number of days between task repeats. |
+| !days_checked|Number of days the task visually appears checked. After the days have passed, it will look as not checked. If you leave this blank, the task will only appear as a checked (done) task for one day. |
+| !days_warn|Number of days until the button is shown as a warning (with a yellow background). |
+| !days_done|Leave blank. The record of dates when the task was marked as done. |
 | !gold_reward|Amount of gold granted when task is marked as done. You know best if a task deserves a large or a small reward. Get paid by your own hand, but be wise enough to set a fair reward. |
-| !~~cronrow~~|~~Times when the task is shown. Uses crontab syntax. Leave blank if you want it to show all the time~~ |
 
 Examples: 
 
@@ -22,3 +24,13 @@ Examples:
  
 
 !! Rewards:
+
+| !days_cooldown|Rewards have a cooldown time span in which the button is shown in blue. You should not get a reward that is still cooling down. Be patient, move on with your pending tasks or have some rest and wait until it is available again. If you buy it while it is still cooling down, it will cost you double. If you want the reward to have no cooldown, set it to zero. |
+| !gold_price|The price. |
+| !days_rewarded|Leave blank. The record of times when this reward was purchased. |
+
+This system will allow you to buy a reward without sufficient funds. However, be aware that it will cost you double. If the reward is still cooling down and you have no funds, it will cost you 4 times the set price. Having a negative balance means you owe yourself. All rewards will cost double while having negative balance. In real life, we reward ourselves even though we have not finished our pending work. This is why I don't believe rewards should be disabled, but they should reflect reality instead. Think about it as a credit. 
+
+Examples:
+
+* [[Videojuego]]

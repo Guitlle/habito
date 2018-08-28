@@ -1,8 +1,11 @@
 created: 20180826053206741
-dayscheck: -30
-daysdone: 2018-1-25
+days_checked: 5
+days_done: 2018-8-28
+days_repeat: 30
+days_warn: 25
 gold_reward: 5
-modified: 20180826060848117
+modified: 20180828063438172
+revision: 0
 tags: Finances Daily
 title: Declare taxes
 type: application/x-tiddler

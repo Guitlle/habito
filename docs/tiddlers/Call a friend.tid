@@ -1,8 +1,11 @@
 created: 20180826053257834
-dayscheck: -4
-daysdone: 2018-8-22
+days_checked: 3
+days_done: 2018-8-28
+days_repeat: 7
+days_warn: 4
 gold_reward: 10
-modified: 20180826055952855
+modified: 20180828063434864
+revision: 0
 tags: Personal Daily
 title: Call a friend
 type: application/x-tiddler

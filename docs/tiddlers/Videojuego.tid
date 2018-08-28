@@ -1,8 +1,9 @@
-cooldown: 5
 created: 20180826065314824
-days_rewarded: 2018-8-26
-gold_price: 20
-modified: 20180826230622586
+days_cooldown: 5
+days_rewarded: [[2018-08-28 01:23:42]] [[2018-08-28 01:23:55]]
+gold_price: 10
+modified: 20180828072357211
+revision: 0
 tags: Reward
 title: Videojuego
 
