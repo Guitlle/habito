@@ -1,5 +1,5 @@
 created: 20180824223543651
-modified: 20180826232937512
+modified: 20180828062025015
 module-type: filteroperator
 tags: 
 title: $:/plugins/Guitlle/helpers/compare.js
@@ -41,7 +41,7 @@ exports.compare = function(source,operator,options) {
             break;
         case "less":
             source(function(tiddler,title) {
-                if ( ((+title > +operator.operand)^(operator.prefix == "!")) == 1) {
+                if ( ((+title < +operator.operand)^(operator.prefix == "!")) == 1) {
                     results.push(title);
                 }
             });
