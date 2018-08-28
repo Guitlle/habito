@@ -155,9 +155,9 @@ Error message and password prompt
 
 <li>Declare taxes</li>
 
-<li>Introduction</li>
+<li>Fall into social media spiral of chaos and vain novelty :(</li>
 
-<li>Llenar el ecofiltro</li>
+<li>Introduction</li>
 
 <li>Pay the bills</li>
 
@@ -8722,11 +8722,11 @@ $:/plugins/Guitlle/habito
         &quot;Habito&quot;: {
             &quot;title&quot;: &quot;Habito&quot;,
             &quot;created&quot;: &quot;20180826045249890&quot;,
-            &quot;gold&quot;: &quot;270&quot;,
-            &quot;modified&quot;: &quot;20180828072357213&quot;,
+            &quot;gold&quot;: &quot;240&quot;,
+            &quot;modified&quot;: &quot;20180828165543747&quot;,
             &quot;tags&quot;: &quot;habito-display&quot;,
             &quot;type&quot;: &quot;application/x-tiddler&quot;,
-            &quot;xp&quot;: &quot;17&quot;,
+            &quot;xp&quot;: &quot;13&quot;,
             &quot;text&quot;: &quot;&lt;div class=\&quot;habito-coimage\&quot;&gt; &lt;span class=\&quot;amount\&quot;&gt; {{!!gold}} &lt;/span&gt; &lt;span&gt;{{$:/plugins/Guitlle/habito/images/coin.png}}&lt;/span&gt; &lt;/div&gt;\n&lt;div class=\&quot;habito-coimage\&quot;&gt; &lt;span class=\&quot;amount\&quot;&gt; {{!!xp}} &lt;/span&gt; &lt;span&gt; experience&lt;/span&gt; &lt;/div&gt;\n\n\n\n&lt;$macrocall $name=\&quot;tabs\&quot; tabsList=\&quot;$:/plugins/Guitlle/habito/habitsView $:/plugins/Guitlle/habito/dailiesView $:/plugins/Guitlle/habito/rewardsView\&quot; default=\&quot;$:/plugins/Guitlle/habito/dailiesView\&quot; state=\&quot;$:/state/tab/habito\&quot; /&gt;\n&quot;
         },
         &quot;$:/plugins/Guitlle/helpers/action-setfield-mathjs.js&quot;: {
@@ -8780,6 +8780,14 @@ $:/plugins/Guitlle/habito
             &quot;type&quot;: &quot;application/x-tiddler&quot;,
             &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[current]tag[Reward]]\&quot; variable=\&quot;tag_name\&quot;&gt;\n&lt;$wikify name=\&quot;dateEntry\&quot; text=\&quot;\&quot;\&quot;&lt;$macrocall $name=\&quot;now\&quot; format=\&quot;YYYY-0MM-DD 0hh:0mm:0ss\&quot;/&gt;\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;dateEntry_brackets\&quot; text=\&quot;\&quot;\&quot;&lt;$text text='[['/&gt;&lt;&lt;dateEntry&gt;&gt;&lt;$text text=']]'/&gt;\&quot;\&quot;\&quot;&gt; \n&lt;$wikify name=\&quot;cooldown\&quot; text=\&quot;\&quot;\&quot;{{{[list[!!days_rewarded]titledate:toOffsetFromDate[]!compare:greater{!!days_cooldown}first[]count[]]}}}\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;nofunds\&quot; text=\&quot;\&quot;\&quot;{{{[{Habito!!gold}!compare:greater{!!gold_price}count[]]}}}\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;price\&quot; text=\&quot;\&quot;\&quot;&lt;$calc&gt;((&lt;&lt;cooldown&gt;&gt;==1?2:1)*(&lt;&lt;nofunds&gt;&gt;==1?2:1)*{{!!gold_price}})&lt;/$calc&gt;\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;price_tag\&quot; text=\&quot;\&quot;\&quot;Get this reward by $&lt;&lt;price&gt;&gt;.\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;widget_class\&quot; text=\&quot;\&quot;\&quot;&lt;$list filter=\&quot;[&lt;cooldown&gt;compare:equal[1]]\&quot;&gt;habito-reward-cooldown &lt;/$list&gt;&lt;$list filter=\&quot;[&lt;nofunds&gt;compare:equal[1]]\&quot;&gt; habito-reward-no-funds&lt;/$list&gt; habito-btn-wrapper\&quot;\&quot;\&quot;&gt;\n&lt;div class=&lt;&lt;widget_class&gt;&gt; title=&lt;&lt;price_tag&gt;&gt;&gt;\n    &lt;$button class=\&quot;habito-btn reward-btn\&quot;&gt;\n        &lt;$action-listops $field=\&quot;days_rewarded\&quot; $subfilter=&lt;&lt;dateEntry_brackets&gt;&gt;/&gt; \n        &lt;$action-setfield-mathjs $tiddler=\&quot;Habito\&quot; $field=\&quot;gold\&quot; $eval=\&quot;gold - price\&quot; price=&lt;&lt;price&gt;&gt; /&gt;\n        $\n    &lt;/$button&gt;\n&lt;/div&gt;\n&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$list&gt;&quot;
         },
+        &quot;$:/plugins/Guitlle/habito/habitButton&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/Guitlle/habito/habitButton&quot;,
+            &quot;created&quot;: &quot;20180828155306887&quot;,
+            &quot;list-before&quot;: &quot;$:/core/ui/ViewTemplate/title&quot;,
+            &quot;modified&quot;: &quot;20180828170036075&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[all[current]tag[Habit]]\&quot; variable=\&quot;tag_name\&quot;&gt;\n&lt;$wikify name=\&quot;dateEntry\&quot; text=\&quot;\&quot;\&quot;&lt;$macrocall $name=\&quot;now\&quot; format=\&quot;YYYY-0MM-DD 0hh:0mm:0ss\&quot;/&gt;\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;dateEntry_brackets\&quot; text=\&quot;\&quot;\&quot;&lt;$text text='[['/&gt;&lt;&lt;dateEntry&gt;&gt;&lt;$text text=']]'/&gt;\&quot;\&quot;\&quot;&gt; \n&lt;$wikify name=\&quot;cooldown\&quot; text=\&quot;\&quot;\&quot;{{{[list[!!days_done]titledate:toOffsetFromDate[]!compare:greater{!!days_cooldown}first[]count[]]}}}\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;positive\&quot; text=\&quot;\&quot;\&quot;&lt;$calc&gt;({{!!gold_reward}} &gt;= 0)?1:0&lt;/$calc&gt;\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;widget_class\&quot; text=\&quot;\&quot;\&quot;&lt;$list filter=\&quot;[&lt;cooldown&gt;compare:equal[1]]\&quot;&gt;habito-habit-cooldown &lt;/$list&gt;&lt;$list filter=\&quot;[&lt;positive&gt;compare:equal[1]]\&quot; emptyMessage=\&quot; habito-habit-negative\&quot;&gt; habito-habit-positive&lt;/$list&gt; habito-btn-wrapper\&quot;\&quot;\&quot;&gt;\n&lt;div class=&lt;&lt;widget_class&gt;&gt;&gt;\n    &lt;$button class=\&quot;habito-btn habit-btn\&quot;&gt;\n        &lt;$action-listops $field=\&quot;days_done\&quot; $subfilter=&lt;&lt;dateEntry_brackets&gt;&gt;/&gt; \n        &lt;$action-setfield-mathjs $tiddler=\&quot;Habito\&quot; $field=\&quot;gold\&quot; $eval=\&quot;gold + gold_reward\&quot; gold_reward={{!!gold_reward}} /&gt;\n        &lt;$action-setfield-mathjs $tiddler=\&quot;Habito\&quot; $field=\&quot;xp\&quot; $eval=\&quot;xp + xp_reward\&quot; xp_reward={{!!xp_reward}} /&gt;\n        ·\n    &lt;/$button&gt;\n    &lt;$list filter=[list[!!days_done]titledate:toOffsetFromDate[]last[]!compare:equal[NaN]]&gt;&lt;span class=\&quot;habito-btn-caption\&quot;&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/span&gt; &lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$wikify&gt;&lt;/$list&gt;&quot;
+        },
         &quot;$:/plugins/Guitlle/habito/habitsTagTemplate&quot;: {
             &quot;title&quot;: &quot;$:/plugins/Guitlle/habito/habitsTagTemplate&quot;,
             &quot;created&quot;: &quot;20180827144458955&quot;,
@@ -8821,10 +8829,10 @@ $:/plugins/Guitlle/habito
             &quot;title&quot;: &quot;$:/plugins/Guitlle/habito/styles.css&quot;,
             &quot;created&quot;: &quot;20180824233146484&quot;,
             &quot;makebackup&quot;: &quot;1&quot;,
-            &quot;modified&quot;: &quot;20180828074016305&quot;,
+            &quot;modified&quot;: &quot;20180828164746161&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
             &quot;type&quot;: &quot;text/css&quot;,
-            &quot;text&quot;: &quot;[data-tags*=\&quot;habito-display\&quot;] .tc-tab-buttons button {\n  font-size: 14pt;\n}\n.habito-btn-wrapper {\n  float:left;\n  margin: 0.2em;\n  margin-right: 1.5em;\n  padding: 0.2em;\n  position: relative;\n}\n.habito-btn-wrapper .habito-btn {\n  background: #FFFFFF;\n  color: black;\n  width: 1.7em;\n  height: 1.7em;\n  font-size: 1.3em;\n  text-align: center;\n  border: 2px dashed #777777;\n}\n.habito-btn-wrapper .habito-btn.success,\n.habito-btn-wrapper .habito-btn.reward-btn {\n  background: #57ee55;\n}\n.habito-btn-wrapper.habito-daily-missed .habito-btn,\n.habito-btn-wrapper.habito-reward-no-funds .habito-btn {\n  background: #EE8888 !important;\n}\n.habito-btn-wrapper.habito-daily-warn .habito-btn {\n  background: #FE7;\n}\n.habito-btn-wrapper.habito-reward-cooldown .habito-btn {\n  background: #85f4ff;\n}\n.habito-list-item {\n  clear:both;\n  background: #DDFFDD;\n  color: #555;\n  padding: 5px;\n  margin-bottom: 10px;\n}\n.habito-list-item h3 {\n  font-size: 1.4em;\n  line-height: 1.5em;\n  margin: 0.2em;\n}\n.habito-list-item::after {\n  clear: both;\n  display: block;\n  content: \&quot; \&quot;;\n  height: 1px;\n}\n.habito-btn-caption {\n  font-size: 9px;\n  position: absolute;\n  right: -5px;\n  bottom: -5px;\n  background: #555;\n  color: #DDD;\n  border-radius: 10px;\n  border: 1px solid white;\n  padding: 3px;\n  text-align: center;\n  text-overflow: ellipsis;\n  overflow: hidden; \n  white-space: nowrap;\n  max-width: 30px;\n  min-width: 14px;\n  line-height: 1.2em;\n}\n.habito-coimage {\n  border-radius: 10px;\n  font-size: 14px;\n  padding: 4px 10px;\n  background: #FEA;\n  display: inline-block;\n  vertical-align: middle;\n}\n.habito-coimage span {\n  vertical-align: middle;\n  font-weight: bold;\n  display: inline-block;\n  height: 25px;\n}&quot;
+            &quot;text&quot;: &quot;[data-tags*=\&quot;habito-display\&quot;] .tc-tab-buttons button {\n  font-size: 14pt;\n}\n.habito-btn-wrapper {\n  float:left;\n  margin: 0.2em;\n  margin-right: 1.5em;\n  padding: 0.2em;\n  position: relative;\n}\n.habito-btn-wrapper .habito-btn {\n  background: #FFFFFF;\n  color: black;\n  width: 1.7em;\n  height: 1.7em;\n  font-size: 1.3em;\n  text-align: center;\n  border: 2px dashed #777777;\n}\n\n.habito-btn-wrapper.habito-habit-positive .habit-btn {\n  background: #BFA;\n}\n.habito-btn-wrapper.habito-habit-negative .habit-btn {\n   background: #F7B3B2;\n}\n.habito-btn-wrapper.habito-habit-negative.habito-habit-cooldown .habit-btn {\n   background: #E73332;\n}\n.habito-btn-wrapper .habito-btn.success,\n.habito-btn-wrapper .habito-btn.reward-btn,\n.habito-btn-wrapper.habito-habit-positive.habito-habit-cooldown .habit-btn {\n  background: #57ee55;\n}\n.habito-btn-wrapper.habito-daily-missed .habito-btn,\n.habito-btn-wrapper.habito-reward-no-funds .habito-btn {\n  background: #EE8888 !important;\n}\n.habito-btn-wrapper.habito-daily-warn .habito-btn {\n  background: #FE7;\n}\n.habito-btn-wrapper.habito-reward-cooldown .habito-btn {\n  background: #85f4ff;\n}\n.habito-list-item {\n  clear:both;\n  background: #DDFFDD;\n  color: #555;\n  padding: 5px;\n  margin-bottom: 10px;\n}\n.habito-list-item h3 {\n  font-size: 1.4em;\n  line-height: 1.5em;\n  margin: 0.2em;\n}\n.habito-list-item::after {\n  clear: both;\n  display: block;\n  content: \&quot; \&quot;;\n  height: 1px;\n}\n.habito-btn-caption {\n  font-size: 9px;\n  position: absolute;\n  right: -5px;\n  bottom: -5px;\n  background: #555;\n  color: #DDD;\n  border-radius: 10px;\n  border: 1px solid white;\n  padding: 3px;\n  text-align: center;\n  text-overflow: ellipsis;\n  overflow: hidden; \n  white-space: nowrap;\n  max-width: 30px;\n  min-width: 14px;\n  line-height: 1.2em;\n}\n.habito-coimage {\n  border-radius: 10px;\n  font-size: 14px;\n  padding: 4px 10px;\n  background: #FEA;\n  display: inline-block;\n  vertical-align: middle;\n}\n.habito-coimage span {\n  vertical-align: middle;\n  font-weight: bold;\n  display: inline-block;\n  height: 25px;\n}&quot;
         },
         &quot;$:/plugins/Guitlle/helpers/titledate.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/Guitlle/helpers/titledate.js&quot;,
@@ -8989,7 +8997,10 @@ $:/plugins/Guitlle/habito
 <pre>Another monthly task.
 </pre>
 </div>
-<div created="20180826044241098" modified="20180828073400709" tags="Docs Habito" title="Introduction" type="application/x-tiddler" revision="0" bag="default">
+<div created="20180827144553783" days_cooldown="1" days_done="[[2018-08-28 10:51:23]] [[2018-08-28 10:53:21]] [[2018-08-28 10:55:37]]" gold_reward="-10" modified="20180828172648181" tags="Habit" title="Fall into social media spiral of chaos and vain novelty :(" xp_reward="-2" revision="0" bag="default">
+<pre></pre>
+</div>
+<div created="20180826044241098" modified="20180828172555339" tags="Docs Habito" title="Introduction" type="application/x-tiddler" revision="0" bag="default">
 <pre>''Habito'' is a habits tool implemented in Tiddlywiki. It is inspired on Habitica and takes some concepts from that project. Habitica is great but I rather having my habits and tasks data in a personal document. Tiddlywiki is a serverless one-page one-file application. Everything in this application is a tiddler. In this case, habits, rewards, dailies, tasks, dashboard and others, are all tiddlers. This means these are all documents that can contain all details you need to thoroughly document all your habits. Even though Habitica has many nice features, I really liked the idea of having a personal wiki integrated with a task manager and habits tracking tool.
 
 To start open the [[Habito]] tiddler and explore the main dashboard. Habito is a set of helpers that extend tiddlywiki basic functionality. You can hack the source code and easily adapt it to your needs. 
@@ -9024,10 +9035,19 @@ This system will allow you to buy a reward without sufficient funds. However, be
 Examples:
 
 * [[Videojuego]]
-</pre>
-</div>
-<div created="20180827144553783" gold_reward="10" modified="20180827144713996" tags="Habit" title="Llenar el ecofiltro" revision="0" bag="default">
-<pre></pre>
+
+!! Habits
+
+This will help you track your habits. Reinforce a good habit and get more gold and xp, reinforce a bad habit and get penalized with a discount on gold and xp.  To create a habit, just add the tag &lt;&lt;tag Habit&gt;&gt; to a tiddler. Set the following fields:
+
+| !gold_reward|The reward when this habit is reinforced. This can be a negative number, meaning it is a bad habit. |
+| !xp_reward|The experience reward. It can also be negative.  |
+| !days_cooldown|How many days will the cooldown last. The button will appear brighter when cooling down, indicating the habit has been hitted recently. |
+| !days_done|Leave blank. This will hold the list of datetimes when the habit button was hitted. |
+
+! What if I cheat?
+
+This tool won't help much if you decide to deceive your own system of rewards and penalties. There is no app for that, unless you hire some third party to punish and reward you, independently of your will. To avoid this you must also hack your mind and your environment. A friend recommended me [ext[zen habits|https://zenhabits.net/archives/]] blog and I bet there are other methods to improve your concentration and motivation.</pre>
 </div>
 <div created="20180826053100205" days_done="2018-1-28 2018-8-27" days_repeat="30" days_warn="15" gold_reward="5" modified="20180828071928863" tags="Finances Daily" title="Pay the bills" type="application/x-tiddler" revision="0" bag="default">
 <pre>This is a monthly task.</pre>
