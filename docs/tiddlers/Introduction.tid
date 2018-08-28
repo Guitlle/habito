@@ -5,10 +5,13 @@ tags: Docs Habito
 title: Introduction
 type: application/x-tiddler
 
-''Habito'' is a habits tool implemented in Tiddlywiki. To start open the [[Habito]] tiddler and explore the main dashboard. Habito is a set of helpers that extend tiddlywiki basic functionality and integrates seamlessly to it.
+''Habito'' is a habits tool implemented in Tiddlywiki. It is inspired on Habitica and takes some concepts from that project. Habitica is great but I rather having my habits and tasks data in a personal document. Tiddlywiki is a serverless one-page one-file application. Everything in this application is a tiddler. In this case, habits, rewards, dailies, tasks, dashboard and others, are all tiddlers. This means these are all documents that can contain all details you need to thoroughly document all your habits. Even though Habitica has many nice features, I really liked the idea of having a personal wiki integrated with a task manager and habits tracking tool.
+
+To start open the [[Habito]] tiddler and explore the main dashboard. Habito is a set of helpers that extend tiddlywiki basic functionality. You can hack the source code and easily adapt it to your needs. 
 
 !! Dailies:
-To create a daily, just add the tag <<tag Daily>> to a tiddler. Set the following fields:
+
+Dailies are repeating tasks. To create a daily, just add the tag <<tag Daily>> to a tiddler. Set the following fields:
 
 | !days_repeat|Number of days between task repeats. |
 | !days_checked|Number of days the task visually appears checked. After the days have passed, it will look as not checked. If you leave this blank, the task will only appear as a checked (done) task for one day. |
@@ -24,6 +27,8 @@ Examples:
  
 
 !! Rewards:
+
+To create a reward, just add the tag <<tag Reward>> to a tiddler. Set the following fields:
 
 | !days_cooldown|Rewards have a cooldown time span in which the button is shown in blue. You should not get a reward that is still cooling down. Be patient, move on with your pending tasks or have some rest and wait until it is available again. If you buy it while it is still cooling down, it will cost you double. If you want the reward to have no cooldown, set it to zero. |
 | !gold_price|The price. |

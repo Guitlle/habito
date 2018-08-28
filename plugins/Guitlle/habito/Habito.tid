@@ -11,4 +11,4 @@ xp: 17
 
 
 
-<$macrocall $name="tabs" tabsList="$:/plugins/Guitlle/habito/habitsView $:/plugins/Guitlle/habito/dailiesView $:/plugins/Guitlle/habito/rewardsView" default="$:/plugins/Guitlle/habito/dailiesTemplate" state="$:/state/tab/habito" />
+<$macrocall $name="tabs" tabsList="$:/plugins/Guitlle/habito/habitsView $:/plugins/Guitlle/habito/dailiesView $:/plugins/Guitlle/habito/rewardsView" default="$:/plugins/Guitlle/habito/dailiesView" state="$:/state/tab/habito" />
