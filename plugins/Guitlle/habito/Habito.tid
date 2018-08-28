@@ -1,10 +1,10 @@
 created: 20180826045249890
-gold: 270
-modified: 20180828072357213
+gold: 240
+modified: 20180828165543747
 tags: habito-display
 title: Habito
 type: application/x-tiddler
-xp: 17
+xp: 13
 
 <div class="habito-coimage"> <span class="amount"> {{!!gold}} </span> <span>{{$:/plugins/Guitlle/habito/images/coin.png}}</span> </div>
 <div class="habito-coimage"> <span class="amount"> {{!!xp}} </span> <span> experience</span> </div>

@@ -1,0 +1,22 @@
+created: 20180828155306887
+list-before: $:/core/ui/ViewTemplate/title
+modified: 20180828170036075
+tags: $:/tags/ViewTemplate
+title: $:/plugins/Guitlle/habito/habitButton
+
+<$list filter="[all[current]tag[Habit]]" variable="tag_name">
+<$wikify name="dateEntry" text="""<$macrocall $name="now" format="YYYY-0MM-DD 0hh:0mm:0ss"/>""">
+<$wikify name="dateEntry_brackets" text="""<$text text='[['/><<dateEntry>><$text text=']]'/>"""> 
+<$wikify name="cooldown" text="""{{{[list[!!days_done]titledate:toOffsetFromDate[]!compare:greater{!!days_cooldown}first[]count[]]}}}""">
+<$wikify name="positive" text="""<$calc>({{!!gold_reward}} >= 0)?1:0</$calc>""">
+<$wikify name="widget_class" text="""<$list filter="[<cooldown>compare:equal[1]]">habito-habit-cooldown </$list><$list filter="[<positive>compare:equal[1]]" emptyMessage=" habito-habit-negative"> habito-habit-positive</$list> habito-btn-wrapper""">
+<div class=<<widget_class>>>
+    <$button class="habito-btn habit-btn">
+        <$action-listops $field="days_done" $subfilter=<<dateEntry_brackets>>/> 
+        <$action-setfield-mathjs $tiddler="Habito" $field="gold" $eval="gold + gold_reward" gold_reward={{!!gold_reward}} />
+        <$action-setfield-mathjs $tiddler="Habito" $field="xp" $eval="xp + xp_reward" xp_reward={{!!xp_reward}} />
+        ·
+    </$button>
+    <$list filter=[list[!!days_done]titledate:toOffsetFromDate[]last[]!compare:equal[NaN]]><span class="habito-btn-caption"><<currentTiddler>></span> </$list>
+</div>
+</$wikify></$wikify></$wikify></$wikify></$wikify></$list>
