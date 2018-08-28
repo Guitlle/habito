@@ -1,18 +1,18 @@
 created: 20180824222515632
 list-before: $:/core/ui/ViewTemplate/title
-modified: 20180827044148979
+modified: 20180828065243613
 tags: $:/tags/ViewTemplate
 title: $:/plugins/Guitlle/habito/dailyDone
 type: application/x-tiddler
 
-<$list filter="[all[current]tags[]compare:equal[Daily]]" variable="tag_name">
+<$list filter="[all[current]tag[Daily]]" variable="tag_name">
 <$wikify name="dateEntry" text="""<$macrocall $name="now" format="YYYY-MM-DD"/>""">
 <$wikify name="dateEntry_brackets" text="""<$text text='[['/><<dateEntry>><$text text=']]'/>"""> 
-<$wikify name="widget_class" text="""<$list filter=[list{!!daysdone}!titledate:afterOffset{!!dayscheck}last[]]>habito-daily-missed </$list>habito-btn-wrapper""">
+<$wikify name="widget_class" text="""<$list filter="[list[!!days_done]titledate:toOffsetFromDate[]!compare:greater{!!days_repeat}count[]compare:equal[0]]">habito-daily-missed </$list><$list filter="[list[!!days_done]titledate:toOffsetFromDate[]!compare:greater{!!days_warn}count[]compare:equal[0]]">habito-daily-warn </$list>habito-btn-wrapper""">
 <div class=<<widget_class>> title="Task done today.">
-<$list filter="[list[!!daysdone]compare:equal<dateEntry>]" variable="i" emptyMessage="""
+<$list filter="[list[!!days_done]titledate:toOffsetFromDate[]!compare:greater{!!days_checked}last[]]" variable="i" emptyMessage="""
     <$button class="habito-btn daily-btn">
-        <$action-listops $field="daysdone" $subfilter= 
+        <$action-listops $field="days_done" $subfilter= 
         <<dateEntry_brackets>>/>
         <$action-setfield-mathjs $tiddler="Habito" $field="gold" $eval="reward+gold" reward={{!!gold_reward}} />
         <$action-setfield-mathjs $tiddler="Habito" $field="xp" $eval="xp+1" reward={{!!xp_reward}} />
@@ -20,12 +20,12 @@ type: application/x-tiddler
     </$button>
 """>
     <$button class="habito-btn success  daily-btn">
-        <$action-listops $field="daysdone" $subfilter="+[remove<dateEntry_brackets>]"/> 
+        <$action-listops $field="days_done" $subfilter="+[remove<dateEntry_brackets>]"/> 
         <$action-setfield-mathjs $tiddler="Habito" $field="gold" $eval="gold-reward" reward={{!!gold_reward}} />
         <$action-setfield-mathjs $tiddler="Habito" $field="xp" $eval="xp-1" />
         {{$:/core/images/done-button}}
     </$button>
 </$list>
-<$list filter=[list[!!daysdone]titledate:toOffsetFromDate[]last[]!compare:equal[NaN]]><span class="habito-btn-caption"><<currentTiddler>></span> </$list>
+<$list filter=[list[!!days_done]titledate:toOffsetFromDate[]last[]!compare:equal[NaN]]><span class="habito-btn-caption"><<currentTiddler>></span> </$list>
 </div>
 </$wikify></$wikify></$wikify></$list>

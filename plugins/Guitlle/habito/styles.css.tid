@@ -1,6 +1,6 @@
 created: 20180824233146484
 makebackup: 1
-modified: 20180827140626366
+modified: 20180828074016305
 tags: $:/tags/Stylesheet
 title: $:/plugins/Guitlle/habito/styles.css
 type: text/css
@@ -30,10 +30,13 @@ type: text/css
 }
 .habito-btn-wrapper.habito-daily-missed .habito-btn,
 .habito-btn-wrapper.habito-reward-no-funds .habito-btn {
-  background: #E88;
+  background: #EE8888 !important;
+}
+.habito-btn-wrapper.habito-daily-warn .habito-btn {
+  background: #FE7;
 }
 .habito-btn-wrapper.habito-reward-cooldown .habito-btn {
-  background: #85f4ff !important;
+  background: #85f4ff;
 }
 .habito-list-item {
   clear:both;
