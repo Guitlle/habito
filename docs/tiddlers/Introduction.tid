@@ -1,5 +1,5 @@
 created: 20180826044241098
-modified: 20180828073400709
+modified: 20180828172555339
 revision: 0
 tags: Docs Habito
 title: Introduction
@@ -39,3 +39,16 @@ This system will allow you to buy a reward without sufficient funds. However, be
 Examples:
 
 * [[Videojuego]]
+
+!! Habits
+
+This will help you track your habits. Reinforce a good habit and get more gold and xp, reinforce a bad habit and get penalized with a discount on gold and xp.  To create a habit, just add the tag <<tag Habit>> to a tiddler. Set the following fields:
+
+| !gold_reward|The reward when this habit is reinforced. This can be a negative number, meaning it is a bad habit. |
+| !xp_reward|The experience reward. It can also be negative.  |
+| !days_cooldown|How many days will the cooldown last. The button will appear brighter when cooling down, indicating the habit has been hitted recently. |
+| !days_done|Leave blank. This will hold the list of datetimes when the habit button was hitted. |
+
+! What if I cheat?
+
+This tool won't help much if you decide to deceive your own system of rewards and penalties. There is no app for that, unless you hire some third party to punish and reward you, independently of your will. To avoid this you must also hack your mind and your environment. A friend recommended me [ext[zen habits|https://zenhabits.net/archives/]] blog and I bet there are other methods to improve your concentration and motivation.

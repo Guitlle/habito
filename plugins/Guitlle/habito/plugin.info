@@ -2,7 +2,7 @@
     "title": "$:/plugins/Guitlle/habito",
     "description": "Habitica like habit tracker for tiddlywiki.",
     "author": "Guitlle",
-    "version": "0.1.1",
+    "version": "0.1.3",
     "core-version": ">=5.0.0",
     "plugin-type": "plugin",
     "list": ""
