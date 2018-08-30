@@ -1,23 +1,22 @@
 created: 20180826065511097
 list-before: $:/core/ui/ViewTemplate/title
-modified: 20180828074341563
+modified: 20180830231421596
 tags: $:/tags/ViewTemplate
 title: $:/plugins/Guitlle/habito/getReward
 type: application/x-tiddler
 
 <$list filter="[all[current]tag[Reward]]" variable="tag_name">
-<$wikify name="dateEntry" text="""<$macrocall $name="now" format="YYYY-0MM-DD 0hh:0mm:0ss"/>""">
-<$wikify name="dateEntry_brackets" text="""<$text text='[['/><<dateEntry>><$text text=']]'/>"""> 
-<$wikify name="cooldown" text="""{{{[list[!!days_rewarded]titledate:toOffsetFromDate[]!compare:greater{!!days_cooldown}first[]count[]]}}}""">
-<$wikify name="nofunds" text="""{{{[{Habito!!gold}!compare:greater{!!gold_price}count[]]}}}""">
+<$wikify name="dateEntry" text="""<$text text='[['/><$macrocall $name="now" format="YYYY-0MM-DD 0hh:0mm:0ss"/><$text text=']]'/>""">
+<$wikify name="cooldown" text="""{{{[list[!!days_rewarded]last[]titledate:toOffsetFromDate[]!compare:greater{!!days_cooldown}first[]count[]]}}}""">
+<$wikify name="nofunds" text="""{{{[{Habito!!gold}!compare:greater{!!gold_price}count[]]}}}"""> 
 <$wikify name="price" text="""<$calc>((<<cooldown>>==1?2:1)*(<<nofunds>>==1?2:1)*{{!!gold_price}})</$calc>""">
 <$wikify name="price_tag" text="""Get this reward by $<<price>>.""">
 <$wikify name="widget_class" text="""<$list filter="[<cooldown>compare:equal[1]]">habito-reward-cooldown </$list><$list filter="[<nofunds>compare:equal[1]]"> habito-reward-no-funds</$list> habito-btn-wrapper""">
 <div class=<<widget_class>> title=<<price_tag>>>
     <$button class="habito-btn reward-btn">
-        <$action-listops $field="days_rewarded" $subfilter=<<dateEntry_brackets>>/> 
+        <$action-listops $field="days_rewarded" $subfilter=<<dateEntry>>/> 
         <$action-setfield-mathjs $tiddler="Habito" $field="gold" $eval="gold - price" price=<<price>> />
         $
     </$button>
 </div>
-</$wikify></$wikify></$wikify></$wikify></$wikify></$wikify></$wikify></$list>
+</$wikify></$wikify></$wikify></$wikify></$wikify></$wikify></$list>

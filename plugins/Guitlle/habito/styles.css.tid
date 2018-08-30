@@ -1,11 +1,11 @@
 created: 20180824233146484
 makebackup: 1
-modified: 20180828074016305
+modified: 20180830232459495
 tags: $:/tags/Stylesheet
 title: $:/plugins/Guitlle/habito/styles.css
 type: text/css
 
-[data-tags*="habito-display"] .tc-tab-buttons button {
+.habito-display .tc-tab-buttons button {
   font-size: 14pt;
 }
 .habito-btn-wrapper {
@@ -24,8 +24,19 @@ type: text/css
   text-align: center;
   border: 2px dashed #777777;
 }
+
+.habito-btn-wrapper.habito-habit-positive .habit-btn {
+  background: #BFA;
+}
+.habito-btn-wrapper.habito-habit-negative .habit-btn {
+   background: #F7B3B2;
+}
+.habito-btn-wrapper.habito-habit-negative.habito-habit-cooldown .habit-btn {
+   background: #E73332;
+}
 .habito-btn-wrapper .habito-btn.success,
-.habito-btn-wrapper .habito-btn.reward-btn {
+.habito-btn-wrapper .habito-btn.reward-btn,
+.habito-btn-wrapper.habito-habit-positive.habito-habit-cooldown .habit-btn {
   background: #57ee55;
 }
 .habito-btn-wrapper.habito-daily-missed .habito-btn,

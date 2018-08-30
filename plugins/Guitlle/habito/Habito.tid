@@ -1,14 +1,13 @@
 created: 20180826045249890
-gold: 270
-modified: 20180828072357213
-tags: habito-display
+gold: 110
+modified: 20180830232446552
 title: Habito
 type: application/x-tiddler
-xp: 17
+xp: -4
 
 <div class="habito-coimage"> <span class="amount"> {{!!gold}} </span> <span>{{$:/plugins/Guitlle/habito/images/coin.png}}</span> </div>
 <div class="habito-coimage"> <span class="amount"> {{!!xp}} </span> <span> experience</span> </div>
 
-
-
+<div class="habito-display">
 <$macrocall $name="tabs" tabsList="$:/plugins/Guitlle/habito/habitsView $:/plugins/Guitlle/habito/dailiesView $:/plugins/Guitlle/habito/rewardsView" default="$:/plugins/Guitlle/habito/dailiesView" state="$:/state/tab/habito" />
+</div>
